@@ -7,7 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
 @Dao
-interface listDAO {
+interface ListDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(name:String,email:String)
 
