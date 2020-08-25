@@ -33,9 +33,14 @@ class MainActivity : AppCompatActivity() {
     fun onSupportNavigateUp(item:MenuItem): Boolean {
         when(item.itemId) {
             R.id.nav_aboutme -> {
-                supportFragmentManager.beginTransaction().replace(R.id.)
-
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_contain,AboutmeFragment()).commit()
             }
+            R.id.nav_contact -> {
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_contain,ContactFragment()).commit()
+            }
+            R.id.nav_list -> {
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_contain,AddListFragment()).commit()
+        }
         }
         return true
     }
