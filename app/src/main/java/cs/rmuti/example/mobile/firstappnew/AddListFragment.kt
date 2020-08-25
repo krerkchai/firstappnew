@@ -12,7 +12,7 @@ class AddListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_List,container,false)
+        return inflater.inflate(R.layout.fragment_list,container,false)
         //return super.onCreateView(inflater, container, savedInstanceState)
     }
 
