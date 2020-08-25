@@ -14,18 +14,19 @@ import cs.rmuti.example.mobile.firstappnew.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
-    private lateinit var binding :ActivityMainBinding
-    private lateinit var drawer_layout:DrawerLayout
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var drawer_layout: DrawerLayout
     private lateinit var navgation_view: NavigationView
     private lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         drawer_layout = binding.drawerlayout
         navgation_view = binding.navView
-        toggle = ActionBarDrawerToggle (this,drawer_layout,R.string.open,R.string.close)
+        navgation_view.setNavigationItemSelectedListener(this)
+        toggle = ActionBarDrawerToggle(this, drawer_layout, R.string.open, R.string.close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -33,9 +34,15 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
     }
 
-    //override fun onSupportNavigateUp(item:MenuItem): Boolean {
+    override fun onBackPressed() {
+        //super.onBackPressed()
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)){
+            drawer_layout.closeDrawer(GravityCompat.START)
+        } else{
+            super.onBackPressed()
+    }
 
-
+    }
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.nav_aboutme -> {
