@@ -46,5 +46,5 @@ dependencies {
             'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0',
             'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     )
-    kapt 'androidx.rom:room-compiler:2.2.5'
+    //kapt 'androidx.rom:room-compiler:2.2.5'
 }
